@@ -1,0 +1,17 @@
+{
+  "name": "The Bone Wolf River — Writer's Companion",
+  "short_name": "Bone Wolf River",
+  "description": "Writer's companion app for The Bone Wolf River by Chase Anthony Ricci Singleton",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#060e19",
+  "theme_color": "#060e19",
+  "icons": [
+    {
+      "src": "cover.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
