@@ -1187,6 +1187,71 @@ table.tbl tr:hover td{background:rgba(201,168,76,.035)}
   inset:0;pointer-events:none;z-index:-1;
   background:radial-gradient(ellipse 70% 60% at 50% 40%,
     rgba(201,168,76,.04) 0%,transparent 70%)}
+
+/* ═══ FEATURE ADDITIONS — footer, disclaimer, about modal ═══════════════════ */
+
+/* Copyright footer — fixed at very bottom, never overlaps panels */
+#sc-footer{
+  position:fixed;bottom:0;left:0;right:0;z-index:300;
+  height:26px;display:flex;align-items:center;justify-content:center;
+  background:var(--navy-dark);
+  border-top:1px solid rgba(201,168,76,.18);
+  font-family:var(--font-b);font-size:10px;
+  color:rgba(201,168,76,.42);letter-spacing:.06em;
+  pointer-events:none;flex-shrink:0}
+
+/* Push #app up so footer never hides panel content */
+#app{bottom:26px!important}
+
+/* Ideas Board data disclaimer */
+#ideas-disclaimer{
+  margin-top:9px;padding:0 2px;
+  font-family:var(--font-b);font-size:10.5px;font-style:italic;
+  color:rgba(201,168,76,.38);line-height:1.55}
+
+/* About modal nav button — sits at far right inside .tabs */
+#btn-about-modal{
+  flex-shrink:0;
+  background:transparent;
+  border:none;border-left:1px solid rgba(201,168,76,.14);
+  color:rgba(201,168,76,.45);
+  font-family:var(--font-h);font-size:8px;letter-spacing:.16em;
+  text-transform:uppercase;padding:0 16px;
+  cursor:pointer;transition:color .15s,background .15s;
+  white-space:nowrap;display:flex;align-items:center;gap:5px}
+#btn-about-modal:hover{color:var(--gold);background:rgba(201,168,76,.04)}
+
+/* About modal overlay */
+#about-modal-overlay{
+  display:none;position:fixed;inset:0;z-index:4000;
+  background:rgba(0,0,0,.74);
+  align-items:center;justify-content:center}
+#about-modal-overlay.open{display:flex}
+#about-modal-box{
+  background:var(--navy-dark);
+  border:1px solid rgba(201,168,76,.28);
+  max-width:480px;width:calc(100vw - 48px);
+  padding:38px 38px 32px;position:relative;
+  box-shadow:0 16px 56px rgba(0,0,0,.65)}
+#about-modal-close{
+  position:absolute;top:12px;right:14px;
+  background:transparent;border:none;
+  color:rgba(201,168,76,.38);font-size:19px;
+  cursor:pointer;line-height:1;padding:4px 8px;
+  transition:color .15s}
+#about-modal-close:hover{color:var(--gold)}
+.amc-crown{font-size:30px;color:var(--gold);display:block;
+  margin-bottom:14px;
+  text-shadow:0 0 18px rgba(201,168,76,.32)}
+.amc-title{font-family:var(--font-h);font-size:13px;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:18px}
+.amc-body{font-family:var(--font-b);font-size:13.5px;
+  line-height:1.78;color:var(--cream-dim);margin-bottom:20px}
+.amc-contact{font-family:var(--font-b);font-size:11.5px;
+  color:rgba(201,168,76,.45);
+  border-top:1px solid rgba(201,168,76,.14);
+  padding-top:14px;letter-spacing:.04em}
 </style>
 </head>
 <body>
@@ -1203,6 +1268,7 @@ table.tbl tr:hover td{background:rgba(201,168,76,.035)}
     <button class="tab" data-panel="p-compass"><span class="rn">VII</span>Story Compass</button>
     <button class="tab" data-panel="p-voice"><span class="rn">VIII</span>Voice Check</button>
     <button class="tab" data-panel="p-about"><span class="rn" style="font-size:7px">IX</span>About</button>
+    <button id="btn-about-modal" title="About Story Compass">&#9819; About</button>
   </div>
 </nav>
 <div id="app">
@@ -1534,6 +1600,7 @@ table.tbl tr:hover td{background:rgba(201,168,76,.035)}
       <button class="btn" id="btn-pin">&#128204; Pin Idea</button>
       <span class="idea-hint">Ctrl+Enter to pin</span>
     </div>
+    <p id="ideas-disclaimer">Story Compass stores all data in your browser locally. Export your work regularly. We are not responsible for data loss due to browser clearing or device issues.</p>
   </div>
   <div class="demo-note">Every idea you speak or type gets captured here. Tagged by chapter. Tracked by status. This is what working inside your own system feels like.</div>
   <div class="demo-callout">Every idea behind this book lives inside this system. <a href="mailto:chasesingleton2k22@gmail.com">(Custom built for each author &#8594;)</a></div>
@@ -3902,7 +3969,47 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   } catch(e) {}
 });
+
+// ── About modal ──────────────────────────────────────────────────────────────
+function openAboutModal() {
+  var m = document.getElementById('about-modal-overlay');
+  if (m) m.classList.add('open');
+}
+function closeAboutModal() {
+  var m = document.getElementById('about-modal-overlay');
+  if (m) m.classList.remove('open');
+}
+document.addEventListener('DOMContentLoaded', function() {
+  var btnAM = document.getElementById('btn-about-modal');
+  if (btnAM) btnAM.addEventListener('click', openAboutModal);
+  var ov = document.getElementById('about-modal-overlay');
+  if (ov) ov.addEventListener('click', function(e) {
+    if (e.target === ov) closeAboutModal();
+  });
+});
+// Close about modal on Escape key
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    var m = document.getElementById('about-modal-overlay');
+    if (m && m.classList.contains('open')) closeAboutModal();
+  }
+});
 </script>
+
+
+<!-- ── About Story Compass Modal ─────────────────────────────────────────── -->
+<div id="about-modal-overlay" role="dialog" aria-modal="true" aria-label="About Story Compass">
+  <div id="about-modal-box">
+    <button id="about-modal-close" onclick="closeAboutModal()" title="Close">&#10005;</button>
+    <span class="amc-crown">&#9819;</span>
+    <div class="amc-title">Story Compass</div>
+    <div class="amc-body">Story Compass is a custom author companion app built around your novel. Your mythology. Your characters. Your world.<br><br>Built by Chase Anthony Ricci Singleton &#8212; CI Technician, novelist, Chattanooga TN.</div>
+    <div class="amc-contact">For inquiries: [your contact method]</div>
+  </div>
+</div>
+
+<!-- ── Copyright Footer ──────────────────────────────────────────────────── -->
+<div id="sc-footer">&#169; 2026 Chase Anthony Ricci Singleton. All rights reserved. Story Compass.</div>
 
 </body>
 </html>
