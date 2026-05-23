@@ -832,6 +832,270 @@ table.tbl tr:hover td{background:rgba(201,168,76,.035)}
   margin:20px 0 10px;padding-bottom:7px;
   border-bottom:1px solid rgba(201,168,76,.12);max-width:680px}
 
+
+/* ── SALES ELEMENTS ──────────────────────────────────────────────────────── */
+
+/* Opening overlay */
+#bwr-intro-overlay{display:none;position:fixed;inset:0;z-index:2000;
+  background:var(--navy-dark);align-items:center;justify-content:center;
+  padding:40px 20px}
+#bwr-intro-overlay.open{display:flex;animation:bwr-intro-fade .7s ease forwards}
+@keyframes bwr-intro-fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.bwr-intro-inner{max-width:460px;text-align:center}
+.bwr-intro-crown{font-size:24px;color:var(--gold);opacity:.5;display:block;margin-bottom:30px;
+  animation:pulse 3s ease-in-out infinite}
+.bwr-intro-eyebrow{font-family:var(--font-h);font-size:8.5px;letter-spacing:.36em;
+  text-transform:uppercase;color:var(--gold-dim);margin-bottom:20px;opacity:.7}
+.bwr-intro-h{font-family:var(--font-h);font-size:23px;color:var(--cream);
+  letter-spacing:.1em;text-transform:uppercase;line-height:1.25;margin-bottom:26px}
+.bwr-intro-body{font-family:var(--font-b);font-size:16.5px;color:var(--cream-dim);
+  font-style:italic;line-height:1.9;margin-bottom:28px}
+.bwr-intro-body em{color:var(--gold);font-style:normal}
+.bwr-intro-rule{width:36px;height:1px;background:rgba(201,168,76,.3);margin:0 auto 26px}
+.bwr-intro-aside{font-family:var(--font-b);font-size:14.5px;color:rgba(232,228,212,.38);
+  font-style:italic;line-height:1.85;margin-bottom:34px}
+.bwr-intro-aside em{color:rgba(201,168,76,.55);font-style:normal}
+.bwr-intro-btn{font-family:var(--font-h);font-size:9px;letter-spacing:.2em;
+  text-transform:uppercase;background:var(--gold);border:1px solid var(--gold);
+  color:var(--navy-dark);padding:13px 38px;cursor:pointer;transition:all .16s;display:block;
+  margin:0 auto 14px}
+.bwr-intro-btn:hover{background:#e8c96a;border-color:#e8c96a}
+.bwr-intro-skip{font-family:var(--font-h);font-size:7.5px;letter-spacing:.15em;
+  text-transform:uppercase;color:rgba(184,175,157,.22);cursor:pointer;
+  background:none;border:none;transition:color .2s;display:block;margin:0 auto}
+.bwr-intro-skip:hover{color:rgba(184,175,157,.55)}
+
+/* Hero whisper — ambient note below hero CTA */
+.hero-whisper{font-family:var(--font-b);font-size:13.5px;color:rgba(232,228,212,.22);
+  font-style:italic;line-height:1.8;text-align:center;padding:22px 30px 0;
+  max-width:500px;margin:0 auto}
+.hero-whisper em{color:rgba(201,168,76,.35);font-style:normal}
+
+/* Enhanced ch1 reading cutoff CTA */
+.ch1-cta-system{text-align:center;padding:44px 24px 36px;max-width:600px;margin:0 auto}
+.ch1-cta-eyebrow{font-family:var(--font-h);font-size:8px;letter-spacing:.32em;
+  text-transform:uppercase;color:rgba(201,168,76,.4);margin-bottom:22px}
+.ch1-cta-headline{font-family:var(--font-b);font-size:17px;color:rgba(232,228,212,.75);
+  font-style:italic;line-height:1.9;margin-bottom:0}
+.ch1-cta-headline em{color:var(--gold);font-style:normal}
+.ch1-cta-divider{width:32px;height:1px;background:rgba(201,168,76,.25);margin:24px auto}
+.ch1-cta-rr{font-family:var(--font-b);font-size:16px;color:var(--gold);
+  font-style:italic;margin-bottom:6px;line-height:1.6}
+.ch1-cta-rr a{color:var(--gold);border-bottom:1px solid rgba(201,168,76,.35);
+  text-decoration:none;transition:border-color .15s}
+.ch1-cta-rr a:hover{border-bottom-color:var(--gold)}
+.ch1-cta-rr-sub{font-family:var(--font-b);font-size:13.5px;color:rgba(232,228,212,.35);
+  font-style:italic}
+.ch1-cta-commission{margin-top:28px;padding-top:24px;border-top:1px solid rgba(201,168,76,.1)}
+.ch1-cta-comm-q{font-family:var(--font-b);font-size:15px;color:rgba(232,228,212,.4);
+  font-style:italic;line-height:1.75;margin-bottom:16px}
+.ch1-cta-comm-link{font-family:var(--font-h);font-size:8.5px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--gold-dim);border:1px solid rgba(201,168,76,.3);
+  padding:10px 24px;text-decoration:none;display:inline-block;transition:all .18s}
+.ch1-cta-comm-link:hover{color:var(--gold);border-color:var(--gold);background:rgba(201,168,76,.07)}
+
+/* Locked modal — imagine yours section */
+.locked-imagine{margin-top:22px;padding-top:20px;border-top:1px solid rgba(201,168,76,.12)}
+.locked-imagine-eyebrow{font-family:var(--font-h);font-size:7.5px;letter-spacing:.26em;
+  text-transform:uppercase;color:rgba(201,168,76,.35);margin-bottom:12px}
+.locked-imagine-body{font-family:var(--font-b);font-size:14px;color:rgba(232,228,212,.42);
+  font-style:italic;line-height:1.8;margin-bottom:16px}
+.locked-imagine-link{font-family:var(--font-h);font-size:8px;letter-spacing:.18em;
+  text-transform:uppercase;background:transparent;
+  border:1px solid rgba(201,168,76,.32);color:var(--gold-dim);
+  padding:9px 22px;cursor:pointer;transition:all .16s;
+  text-decoration:none;display:inline-block}
+.locked-imagine-link:hover{border-color:var(--gold);color:var(--gold);background:rgba(201,168,76,.07)}
+
+/* ═══ SALES LAYER V2 ════════════════════════════════════════════════════ */
+
+/* ── Hero commission hook ─────────────────────────────────────────────── */
+.hero-commission-hook{text-align:center;padding:24px 30px 0;max-width:520px;margin:0 auto}
+.hch-headline{font-family:var(--font-h);font-size:12px;color:var(--gold);
+  letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+.hch-body{font-family:var(--font-b);font-size:14.5px;color:rgba(232,228,212,.55);
+  font-style:italic;line-height:1.75;margin-bottom:12px}
+.hch-email{font-family:var(--font-h);font-size:9px;letter-spacing:.15em;
+  color:var(--gold-dim);text-decoration:none;border-bottom:1px solid rgba(201,168,76,.25);
+  padding-bottom:1px;transition:all .15s}
+.hch-email:hover{color:var(--gold);border-bottom-color:var(--gold)}
+
+/* ── Feature callout strips ───────────────────────────────────────────── */
+.demo-callout{font-family:var(--font-b);font-size:12.5px;color:rgba(201,168,76,.45);
+  font-style:italic;margin-bottom:14px;line-height:1.6;padding-left:2px}
+.demo-callout a{color:rgba(201,168,76,.55);text-decoration:none;
+  border-bottom:1px solid rgba(201,168,76,.2);transition:all .14s}
+.demo-callout a:hover{color:var(--gold);border-bottom-color:var(--gold)}
+
+/* ── Mid-read CTA rewrite (ch1-cta-system upgrade) ────────────────────── */
+.ch1-cta-bullets{text-align:left;display:inline-block;margin:16px 0 0}
+.ch1-cta-bl-h{font-family:var(--font-h);font-size:9px;color:var(--gold-dim);
+  letter-spacing:.2em;text-transform:uppercase;margin-bottom:10px}
+.ch1-cta-bl-item{font-family:var(--font-b);font-size:15px;color:rgba(232,228,212,.55);
+  font-style:italic;line-height:1.85;padding-left:4px}
+.ch1-cta-comm-email{font-family:var(--font-h);font-size:9px;letter-spacing:.14em;
+  color:var(--gold-dim);text-decoration:none;display:block;margin-top:6px;
+  border-bottom:1px solid rgba(201,168,76,.2);width:fit-content;
+  padding-bottom:1px;transition:all .15s}
+.ch1-cta-comm-email:hover{color:var(--gold);border-bottom-color:var(--gold)}
+
+/* ── Closing pitch section ────────────────────────────────────────────── */
+#closing-pitch{max-width:620px;margin:60px auto 80px;padding:0 36px;text-align:center}
+.cp-rule-top{width:40px;height:1px;background:rgba(201,168,76,.25);margin:0 auto 36px}
+.cp-crown{font-size:22px;color:var(--gold-dim);margin-bottom:22px;opacity:.6}
+.cp-h{font-family:var(--font-h);font-size:20px;color:var(--cream);
+  letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+.cp-sub{font-family:var(--font-b);font-size:18px;color:var(--gold);
+  font-style:italic;margin-bottom:28px;line-height:1.4}
+.cp-body{font-family:var(--font-b);font-size:16px;color:rgba(232,228,212,.55);
+  font-style:italic;line-height:1.85;margin-bottom:22px}
+.cp-steps{display:flex;flex-direction:column;gap:4px;margin:0 auto 28px;
+  max-width:280px;text-align:left}
+.cp-step{font-family:var(--font-b);font-size:15px;color:rgba(232,228,212,.45);
+  font-style:italic;padding-left:14px;position:relative}
+.cp-step::before{content:'\2014';position:absolute;left:0;color:var(--gold-dim)}
+.cp-rule{width:32px;height:1px;background:rgba(201,168,76,.22);margin:0 auto 26px}
+.cp-email{font-family:var(--font-h);font-size:9.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--gold);text-decoration:none;
+  border:1px solid rgba(201,168,76,.4);padding:11px 28px;display:inline-block;
+  transition:all .18s;margin-bottom:14px}
+.cp-email:hover{background:rgba(201,168,76,.1)}
+.cp-rr-line{font-family:var(--font-b);font-size:13px;color:rgba(232,228,212,.3);
+  font-style:italic;margin-bottom:8px}
+.cp-rr-line a{color:rgba(201,168,76,.4);text-decoration:none;border-bottom:1px solid rgba(201,168,76,.2)}
+.cp-rr-line a:hover{color:var(--gold-dim)}
+.cp-limited{font-family:var(--font-h);font-size:7.5px;letter-spacing:.22em;
+  text-transform:uppercase;color:rgba(201,168,76,.25);margin-top:10px}
+
+/* ── Sidebar credit link ──────────────────────────────────────────────── */
+.sb-credit{display:block;padding:11px 14px 13px;border-top:1px solid rgba(201,168,76,.1);
+  text-decoration:none;cursor:pointer;transition:background .14s}
+.sb-credit:hover{background:rgba(201,168,76,.04)}
+.sb-credit-line{display:block;font-family:var(--font-h);font-size:8px;
+  letter-spacing:.14em;text-transform:uppercase;color:rgba(201,168,76,.4);margin-bottom:3px}
+.sb-credit-sub{display:block;font-family:var(--font-b);font-size:11px;
+  color:rgba(201,168,76,.28);font-style:italic;line-height:1.4;transition:color .14s}
+.sb-credit:hover .sb-credit-line{color:var(--gold-dim)}
+.sb-credit:hover .sb-credit-sub{color:rgba(201,168,76,.55)}
+
+/* ── Floating FAB ─────────────────────────────────────────────────────── */
+#fab-get-app{position:fixed;bottom:22px;left:22px;z-index:1500;
+  font-family:var(--font-h);font-size:8.5px;letter-spacing:.16em;
+  text-transform:uppercase;background:var(--gold);border:1px solid var(--gold);
+  color:var(--navy-dark);padding:10px 20px;cursor:pointer;
+  box-shadow:0 2px 18px rgba(201,168,76,.22);transition:all .18s}
+#fab-get-app:hover{background:#e8c96a;box-shadow:0 4px 24px rgba(201,168,76,.4)}
+
+/* ── Get Your App contact panel ───────────────────────────────────────── */
+#get-app-panel{position:fixed;bottom:70px;left:22px;z-index:1499;
+  width:300px;background:var(--navy-dark);border:1px solid rgba(201,168,76,.28);
+  padding:26px 24px 22px;
+  transform:translateY(12px);opacity:0;pointer-events:none;
+  transition:all .22s ease;
+  box-shadow:0 8px 36px rgba(0,0,0,.5)}
+#get-app-panel.open{transform:translateY(0);opacity:1;pointer-events:auto}
+.gap-close{position:absolute;top:10px;right:12px;background:none;border:none;
+  color:var(--cream-dim);cursor:pointer;font-size:11px;opacity:.45;transition:opacity .15s}
+.gap-close:hover{opacity:.85}
+.gap-crown{font-size:16px;color:var(--gold-dim);margin-bottom:12px;opacity:.55}
+.gap-h{font-family:var(--font-h);font-size:11px;color:var(--cream);
+  letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
+.gap-body{font-family:var(--font-b);font-size:14px;color:var(--cream-dim);
+  font-style:italic;line-height:1.78;margin-bottom:14px}
+.gap-divider{width:28px;height:1px;background:rgba(201,168,76,.2);margin:14px 0}
+.gap-email{font-family:var(--font-h);font-size:8px;letter-spacing:.14em;
+  color:var(--gold);text-decoration:none;display:block;margin-bottom:8px;
+  border-bottom:1px solid rgba(201,168,76,.25);width:fit-content;
+  padding-bottom:2px;transition:all .14s}
+.gap-email:hover{border-bottom-color:var(--gold)}
+.gap-rr{font-family:var(--font-b);font-size:12px;color:rgba(232,228,212,.3);
+  font-style:italic;margin-bottom:0}
+.gap-rr a{color:rgba(201,168,76,.35);text-decoration:none;border-bottom:1px solid rgba(201,168,76,.15)}
+.gap-rr a:hover{color:var(--gold-dim)}
+.gap-about-block{margin-top:14px;padding-top:14px;border-top:1px solid rgba(201,168,76,.1)}
+.gap-about-h{font-family:var(--font-h);font-size:7.5px;letter-spacing:.18em;
+  text-transform:uppercase;color:rgba(201,168,76,.35);margin-bottom:7px}
+.gap-about-body{font-family:var(--font-b);font-size:12.5px;color:rgba(232,228,212,.3);
+  font-style:italic;line-height:1.65;margin-bottom:12px}
+.gap-about-tab{font-family:var(--font-h);font-size:7.5px;letter-spacing:.14em;
+  text-transform:uppercase;background:transparent;color:var(--gold-dim);
+  border:1px solid rgba(201,168,76,.25);padding:7px 14px;cursor:pointer;
+  transition:all .15s;width:100%}
+.gap-about-tab:hover{color:var(--gold);border-color:var(--gold);background:rgba(201,168,76,.05)}
+
+/* ── About This System panel ──────────────────────────────────────────── */
+.about-section{max-width:720px}
+.about-rule{width:36px;height:1px;background:rgba(201,168,76,.25);margin:22px 0 28px}
+.about-h{font-family:var(--font-h);font-size:10.5px;color:var(--gold);
+  letter-spacing:.2em;text-transform:uppercase;margin-bottom:12px}
+.about-body{font-family:var(--font-b);font-size:15.5px;color:var(--cream-dim);
+  font-style:italic;line-height:1.85;margin-bottom:28px}
+.about-closing-h{font-family:var(--font-h);font-size:13px;color:var(--cream);
+  letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px}
+.about-closing-body{font-family:var(--font-b);font-size:15.5px;color:var(--cream-dim);
+  font-style:italic;line-height:1.85;margin-bottom:24px}
+.about-contact-block{border:1px solid rgba(201,168,76,.2);padding:22px 24px;
+  max-width:420px;text-align:center;margin-top:8px}
+.about-email{font-family:var(--font-h);font-size:10px;letter-spacing:.16em;
+  color:var(--gold);text-decoration:none;display:block;margin-bottom:12px;
+  border-bottom:1px solid rgba(201,168,76,.3);width:fit-content;
+  margin-left:auto;margin-right:auto;padding-bottom:2px;transition:all .15s}
+.about-email:hover{border-bottom-color:var(--gold)}
+.about-rr{font-family:var(--font-b);font-size:13.5px;color:rgba(232,228,212,.4);
+  font-style:italic;margin-bottom:8px}
+.about-rr a{color:rgba(201,168,76,.5);text-decoration:none;
+  border-bottom:1px solid rgba(201,168,76,.2)}
+.about-rr a:hover{color:var(--gold-dim)}
+.about-limited{font-family:var(--font-h);font-size:7.5px;letter-spacing:.2em;
+  text-transform:uppercase;color:rgba(201,168,76,.28);margin-top:8px}
+
+/* ── Signal Bible reference cards ────────────────────────────────────── */
+.sig-ref-wrap{margin-bottom:20px}
+.sig-ref-hdr{margin-bottom:16px}
+.sig-ref-title-h{font-family:var(--font-h);font-size:11px;color:var(--gold);
+  letter-spacing:.22em;text-transform:uppercase;margin-bottom:8px}
+.sig-ref-subtitle{font-family:var(--font-b);font-size:14px;color:var(--cream-dim);
+  font-style:italic;line-height:1.6;max-width:700px}
+.sig-card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:6px}
+@media(max-width:1000px){.sig-card-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:680px){.sig-card-grid{grid-template-columns:1fr}}
+.sig-card-ref{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);
+  padding:13px 14px;border-radius:1px;position:relative;overflow:hidden}
+.sig-card-ref::before{content:'';position:absolute;top:0;left:0;bottom:0;width:3px}
+.sig-card-ref.hl-atmo::before{background:rgba(80,160,255,.55)}
+.sig-card-ref.hl-animal::before{background:rgba(200,130,40,.65)}
+.sig-card-ref.hl-calm::before{background:rgba(80,190,130,.55)}
+.sig-card-ref.hl-fire::before{background:rgba(255,100,30,.6)}
+.sig-card-ref.hl-prec::before{background:rgba(170,90,240,.55)}
+.sig-card-ref.hl-recog::before{background:rgba(255,215,50,.55)}
+.sig-card-num{font-family:var(--font-h);font-size:8px;letter-spacing:.22em;
+  color:var(--gold-dim);margin-bottom:5px}
+.sig-card-name{font-family:var(--font-h);font-size:11px;color:var(--cream);
+  letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+.sig-card-desc{font-family:var(--font-b);font-size:13px;color:var(--cream-dim);
+  font-style:italic;line-height:1.55;margin-bottom:7px}
+.sig-card-ex{font-family:var(--font-b);font-size:11.5px;color:rgba(201,168,76,.5);
+  font-style:italic;line-height:1.45;border-left:1px solid rgba(201,168,76,.2);
+  padding-left:8px}
+
+/* ── Reader feature guide strip ───────────────────────────────────────── */
+#reader-guide{position:sticky;top:0;z-index:8;
+  background:rgba(6,14,25,.96);border-bottom:1px solid rgba(201,168,76,.12);
+  padding:8px 20px;display:flex;align-items:center;gap:0;flex-wrap:wrap;
+  font-family:var(--font-h);font-size:7.5px;letter-spacing:.12em;
+  text-transform:uppercase}
+#reader-guide.hidden{display:none}
+.rg-item{display:flex;align-items:center;gap:5px;padding:3px 14px 3px 0;
+  border-right:1px solid rgba(201,168,76,.1);margin-right:14px;color:var(--cream-dim)}
+.rg-item:last-of-type{border-right:none;margin-right:0}
+.rg-icon{color:var(--gold-dim);font-size:11px}
+.rg-text{line-height:1.35}
+.rg-text strong{color:var(--gold-dim);display:block;margin-bottom:1px}
+.rg-text span{color:rgba(184,175,157,.5);font-size:6.5px;letter-spacing:.1em;text-transform:none;
+  font-family:var(--font-b);font-style:italic}
+.rg-dismiss{margin-left:auto;background:none;border:none;color:rgba(184,175,157,.25);
+  cursor:pointer;font-size:10px;transition:color .14s;padding:2px 4px;letter-spacing:0}
+.rg-dismiss:hover{color:var(--cream-dim)}
 </style>
 </head>
 <body>
@@ -847,6 +1111,7 @@ table.tbl tr:hover td{background:rgba(201,168,76,.035)}
     <button class="tab" data-panel="p-arch"><span class="rn">VI</span>Architecture</button>
     <button class="tab" data-panel="p-compass"><span class="rn">VII</span>Story Compass</button>
     <button class="tab" data-panel="p-voice"><span class="rn">VIII</span>Voice Check</button>
+    <button class="tab" data-panel="p-about"><span class="rn" style="font-size:7px">IX</span>About</button>
   </div>
 </nav>
 <div id="app">
@@ -875,12 +1140,39 @@ table.tbl tr:hover td{background:rgba(201,168,76,.035)}
         <span class="rp-theme-btn" data-theme="black" title="Pure Black"></span>
       </div>
     </div>
+    <a class="sb-credit" href="mailto:chasesingleton2k22@gmail.com" title="Get your own writing system">
+      <span class="sb-credit-line">Built by Chase Singleton</span>
+      <span class="sb-credit-sub">Custom author systems available &#8594;</span>
+    </a>
   </nav>
   <button id="btn-wide" title="Hide sidebar">&#9664;</button>
-  <button id="btn-edit" title="Toggle author editing mode">&#9998; Author Mode</button>
+  <button id="btn-edit" title="Author Mode: Click any paragraph to edit it directly. Changes save in your browser.">&#9998; Author Mode</button>
   <button id="btn-export-ch" title="Copy current chapter for Royal Road">&#8595; Export</button>
   <div id="reader">
     <div id="read-progress"></div>
+    <div id="reader-guide">
+      <div class="rg-item">
+        <span class="rg-icon">&#9664;</span>
+        <div class="rg-text"><strong>Sidebar</strong><span>Toggle chapter list</span></div>
+      </div>
+      <div class="rg-item">
+        <span class="rg-icon">&#9998;</span>
+        <div class="rg-text"><strong>Author Mode</strong><span>Edit chapter text live &mdash; saves in your browser</span></div>
+      </div>
+      <div class="rg-item">
+        <span class="rg-icon">&#8595;</span>
+        <div class="rg-text"><strong>Export</strong><span>Copy chapter formatted for Royal Road</span></div>
+      </div>
+      <div class="rg-item">
+        <span class="rg-icon">&#128269;</span>
+        <div class="rg-text"><strong>Search</strong><span>Full-text search across all chapters</span></div>
+      </div>
+      <div class="rg-item">
+        <span class="rg-icon">&#9881;</span>
+        <div class="rg-text"><strong>Display</strong><span>Font size &amp; theme in sidebar &amp; top-right</span></div>
+      </div>
+      <button class="rg-dismiss" title="Dismiss" onclick="dismissGuide()">&#10005;</button>
+    </div>
     <div id="edit-bar">
       <button class="edit-bar-btn" id="btn-add-para">+ Add Paragraph</button>
       <button class="edit-bar-btn" id="btn-revert">&#8617; Revert Chapter</button>
@@ -910,9 +1202,14 @@ table.tbl tr:hover td{background:rgba(201,168,76,.035)}
       </div>
       <div class="hero-cta-wrap">
         <button class="hero-btn-fill" onclick="showChapter('opening');document.getElementById('reader').scrollTop=0;">Start Reading</button>
-        <a class="hero-btn-outline" href="mailto:chasesingleton2k22@gmail.com">Commission Your App</a>
+        <a class="hero-btn-outline" href="mailto:chasesingleton2k22@gmail.com">Get Your Own Writing System</a>
       </div>
       <div class="hero-attr-line">A novel by Chase Anthony Ricci Singleton &nbsp;&middot;&nbsp; App design available for your book</div>
+      <div class="hero-commission-hook">
+        <div class="hch-headline">Turn Your Book Into a Custom Writing System</div>
+        <div class="hch-body">This app was built from one novel. Every tool, every panel,<br>every feature designed around it. I build systems like this for authors.</div>
+        <a class="hch-email" href="mailto:chasesingleton2k22@gmail.com">&#8594;&nbsp; chasesingleton2k22@gmail.com</a>
+      </div>
     </div>
     <div id="reader-floating-btns">
       <button id="btn-reader-prefs" class="reader-float-btn" title="Display settings">&#9881;</button>
@@ -936,15 +1233,83 @@ table.tbl tr:hover td{background:rgba(201,168,76,.035)}
       </div>
     </div>
     <div id="chapters"></div>
+    <div id="closing-pitch">
+      <div class="cp-rule-top"></div>
+      <div class="cp-crown">&#9819;</div>
+      <div class="cp-h">This system was built from one book.</div>
+      <div class="cp-sub">Now imagine yours.</div>
+      <div class="cp-body">I build these for authors &mdash; fully customized<br>to your writing process.</div>
+      <div class="cp-steps">
+        <div class="cp-step">You send your manuscript.</div>
+        <div class="cp-step">We talk through it.</div>
+        <div class="cp-step">I build your system.</div>
+      </div>
+      <div class="cp-rule"></div>
+      <a class="cp-email" href="mailto:chasesingleton2k22@gmail.com">&#8594;&nbsp; chasesingleton2k22@gmail.com</a>
+      <div class="cp-rr-line">Or message me on <a href="https://www.royalroad.com/fiction/110138/bone-wolf-river" target="_blank" rel="noopener">Royal Road</a></div>
+      <div class="cp-limited">Limited spots while I&#8217;m starting out.</div>
+    </div>
   </div>
 </div>
 
 <div id="p-signal" class="panel tool-panel">
   <div>
     <div class="tool-h">Signal Bible Checker</div>
-    <div class="tool-d">The Six-Element Event Stack &#8212; check any passage for the signals that mark an authentic Bone Calm event.</div>
+    <div class="tool-d">The Six-Element Event Stack &mdash; the recurring patterns that mark an authentic Bone Calm event in this novel. Atmosphere, Animal, Calm, Fire, Precision, Recognition. Paste any passage to see which signals fire.</div>
   </div>
     <div class="demo-note">This is a live tool. Paste any passage from your own writing and check it against the six signals. This is what a custom app built for your book can do.</div>
+    <div class="demo-callout">The AI assistant already knows this story&#8217;s rules. <a href="mailto:chasesingleton2k22@gmail.com">(Custom built for each author &#8594;)</a></div>
+  <div class="sig-ref-wrap">
+    <div class="sig-ref-hdr">
+      <div class="sig-ref-title-h">The Six Signals &mdash; Bone Calm Event Stack</div>
+      <div class="sig-ref-subtitle">These are the six recurring patterns that mark an authentic Bone Calm event in <em>The Bone Wolf River</em>. Every powerful scene in the novel contains some combination of these signals. Paste any passage below to see which ones fire.</div>
+    </div>
+    <div class="sig-card-grid">
+
+      <div class="sig-card-ref hl-atmo">
+        <div class="sig-card-num">Signal 01</div>
+        <div class="sig-card-name">&#128267; Atmosphere Shifts</div>
+        <div class="sig-card-desc">The environment changes &mdash; silence, temperature, smell, pressure, the world going still before the event.</div>
+        <div class="sig-card-ex">&ldquo;The plains outside had gone completely silent. That was the worst part.&rdquo;</div>
+      </div>
+
+      <div class="sig-card-ref hl-animal">
+        <div class="sig-card-num">Signal 02</div>
+        <div class="sig-card-name">&#128054; Animal Reacts First</div>
+        <div class="sig-card-desc">The animal responds before any human in the scene understands what is happening.</div>
+        <div class="sig-card-ex">&ldquo;The hackles were up. All of them. From the base of his skull to the middle of his back.&rdquo;</div>
+      </div>
+
+      <div class="sig-card-ref hl-calm">
+        <div class="sig-card-num">Signal 03</div>
+        <div class="sig-card-name">&#10024; Calm Enters Character</div>
+        <div class="sig-card-desc">The Bone Calm descends &mdash; a specific quality of still that is not peace. Not numbness. Something ancient.</div>
+        <div class="sig-card-ex">&ldquo;Calm to the bone. Not the blankness of a child who doesn&rsquo;t understand what fire is.&rdquo;</div>
+      </div>
+
+      <div class="sig-card-ref hl-fire">
+        <div class="sig-card-num">Signal 04</div>
+        <div class="sig-card-name">&#128293; Fire / Light Behaves Unnaturally</div>
+        <div class="sig-card-desc">Fire or light does something it should not &mdash; bends toward something, gathers, illuminates a face from inside.</div>
+        <div class="sig-card-ex">&ldquo;The fire played off the faces of the dragons and in that light they would seem to disappear.&rdquo;</div>
+      </div>
+
+      <div class="sig-card-ref hl-prec">
+        <div class="sig-card-num">Signal 05</div>
+        <div class="sig-card-name">&#9672; Action Happens with Precision</div>
+        <div class="sig-card-desc">The action that follows the calm is executed with impossible, inhuman precision &mdash; fluid, clean, certain.</div>
+        <div class="sig-card-ex">&ldquo;She drew it to full extension and held it perfectly still. Something was helping the child.&rdquo;</div>
+      </div>
+
+      <div class="sig-card-ref hl-recog">
+        <div class="sig-card-num">Signal 06</div>
+        <div class="sig-card-name">&#128065; Someone Recognizes It After</div>
+        <div class="sig-card-desc">A witness names what happened &mdash; not in wonder but in recognition. They have seen this before, or something like it.</div>
+        <div class="sig-card-ex">&ldquo;That&rsquo;s a war bow,&rdquo; he said. &ldquo;She drew a full war bow.&rdquo;</div>
+      </div>
+
+    </div>
+  </div>
   <textarea id="sig-in" class="paste" placeholder="Paste any passage, scene, or paragraph here&#8230;"></textarea>
   <div class="row">
     <button class="btn" id="btn-sig">Check Signals</button>
@@ -964,7 +1329,7 @@ table.tbl tr:hover td{background:rgba(201,168,76,.035)}
   </div>
   <div class="demo-footer">
     <a href="https://www.royalroad.com/fiction/110138/bone-wolf-river" target="_blank" rel="noopener">Read The Bone Wolf River free &mdash; Royal Road</a>
-    <a href="mailto:chasesingleton2k22@gmail.com">Commission your own author app</a>
+    <a href="mailto:chasesingleton2k22@gmail.com">Get your own writing system</a>
   </div>
 </div>
 
@@ -1015,7 +1380,7 @@ table.tbl tr:hover td{background:rgba(201,168,76,.035)}
 
   <div class="demo-footer">
     <a href="https://www.royalroad.com/fiction/110138/bone-wolf-river" target="_blank" rel="noopener">Read The Bone Wolf River free &mdash; Royal Road</a>
-    <a href="mailto:chasesingleton2k22@gmail.com">Commission your own author app</a>
+    <a href="mailto:chasesingleton2k22@gmail.com">Get your own writing system</a>
   </div>
 </div>
 <div id="p-mistakes" class="panel tool-panel">
@@ -1024,6 +1389,7 @@ table.tbl tr:hover td{background:rgba(201,168,76,.035)}
     <div class="tool-d">Check for stacked descriptors, overused phrases, eye color contradictions, hedge words, weak intensifiers, long sentences, same opening words, and Orbus acting with will instead of gravity.</div>
   </div>
     <div class="demo-note">Paste any passage. Find what&#8217;s holding it back. This tool is built into every custom app.</div>
+    <div class="demo-callout">This tool is calibrated to this book&#8217;s specific patterns and voice. <a href="mailto:chasesingleton2k22@gmail.com">(Custom built for each author &#8594;)</a></div>
   <textarea id="mis-in" class="paste" placeholder="Paste any passage, scene, or chapter excerpt here&#8230;"></textarea>
   <div class="row">
     <button class="btn" id="btn-mis">Find Mistakes</button>
@@ -1033,7 +1399,7 @@ table.tbl tr:hover td{background:rgba(201,168,76,.035)}
   <div id="mis-results"><div class="empty">Paste a passage and click Find Mistakes.</div></div>
   <div class="demo-footer">
     <a href="https://www.royalroad.com/fiction/110138/bone-wolf-river" target="_blank" rel="noopener">Read The Bone Wolf River free &mdash; Royal Road</a>
-    <a href="mailto:chasesingleton2k22@gmail.com">Commission your own author app</a>
+    <a href="mailto:chasesingleton2k22@gmail.com">Get your own writing system</a>
   </div>
 </div>
 <div id="p-ideas" class="panel tool-panel">
@@ -1079,6 +1445,7 @@ table.tbl tr:hover td{background:rgba(201,168,76,.035)}
     </div>
   </div>
   <div class="demo-note">Every idea you speak or type gets captured here. Tagged by chapter. Tracked by status. This is what working inside your own system feels like.</div>
+  <div class="demo-callout">Every idea behind this book lives inside this system. <a href="mailto:chasesingleton2k22@gmail.com">(Custom built for each author &#8594;)</a></div>
 
   <div class="demo-ref-card">
     <div class="demo-ref-cat">Tone Reference</div>
@@ -1116,7 +1483,7 @@ table.tbl tr:hover td{background:rgba(201,168,76,.035)}
 
   <div class="demo-footer">
     <a href="https://www.royalroad.com/fiction/110138/bone-wolf-river" target="_blank" rel="noopener">Read The Bone Wolf River free &mdash; Royal Road</a>
-    <a href="mailto:chasesingleton2k22@gmail.com">Commission your own author app</a>
+    <a href="mailto:chasesingleton2k22@gmail.com">Get your own writing system</a>
   </div>
 
 <div id="p-arch" class="panel tool-panel">
@@ -1219,7 +1586,7 @@ table.tbl tr:hover td{background:rgba(201,168,76,.035)}
 
   <div class="demo-footer" style="margin-top:36px">
     <a href="https://www.royalroad.com/fiction/110138/bone-wolf-river" target="_blank" rel="noopener">Read The Bone Wolf River free &mdash; Royal Road</a>
-    <a href="mailto:chasesingleton2k22@gmail.com">Commission your own author app</a>
+    <a href="mailto:chasesingleton2k22@gmail.com">Get your own writing system</a>
   </div>
 </div>
 
@@ -1235,7 +1602,7 @@ table.tbl tr:hover td{background:rgba(201,168,76,.035)}
   <div id="compass-grid" class="compass-grid"></div>
   <div class="demo-footer">
     <a href="https://www.royalroad.com/fiction/110138/bone-wolf-river" target="_blank" rel="noopener">Read The Bone Wolf River free &mdash; Royal Road</a>
-    <a href="mailto:chasesingleton2k22@gmail.com">Commission your own author app</a>
+    <a href="mailto:chasesingleton2k22@gmail.com">Get your own writing system</a>
   </div>
 </div>
 
@@ -1251,6 +1618,54 @@ table.tbl tr:hover td{background:rgba(201,168,76,.035)}
     <button class="btn btn-dim" id="btn-voice-clr">Clear</button>
   </div>
   <div id="voice-results"><div class="empty">Paste a passage and click Check Voice.</div></div>
+</div>
+
+<div id="p-about" class="panel tool-panel">
+  <div>
+    <div class="tool-h">About This System</div>
+    <div class="tool-d">Why it was built, what it does, and how to get one for your book.</div>
+  </div>
+  <div class="about-section">
+    <div class="about-rule"></div>
+
+    <div class="about-h">Why I Built This</div>
+    <div class="about-body">
+      I was writing <em>The Bone Wolf River</em> and realized I kept losing track of things &mdash; patterns I had established, threads I had not resolved, ideas I had spoken out loud and forgotten. So I built a system to hold it all.<br><br>
+      It started as notes. Then it became tools. Then it became this.
+    </div>
+
+    <div class="about-h">What It Replaces</div>
+    <div class="about-body">
+      Notebooks that do not search. Spreadsheets that do not understand story. Generic writing software built for everyone and therefore built for no one.<br><br>
+      This app is built around one book&#8217;s specific logic &mdash; its signals, its characters, its open threads, its voice patterns. That specificity is the point.
+    </div>
+
+    <div class="about-h">Who It&#8217;s For</div>
+    <div class="about-body">
+      Authors who take their work seriously. Writers with enough material that keeping track of it matters. Anyone building a story world complex enough to need its own system.
+    </div>
+
+    <div class="about-rule"></div>
+
+    <div class="about-closing-h">I Build These for Other Writers</div>
+    <div class="about-closing-body">
+      If you want one, reach out.<br><br>
+      I work with you directly. You send the manuscript, we talk through it, I build the system.<br><br>
+      I am not a company. Not a SaaS. Not a template seller.<br>
+      I am one person who builds real tools for real writers.
+    </div>
+
+    <div class="about-contact-block">
+      <a class="about-email" href="mailto:chasesingleton2k22@gmail.com">chasesingleton2k22@gmail.com</a>
+      <div class="about-rr">Or find me on <a href="https://www.royalroad.com/fiction/110138/bone-wolf-river" target="_blank" rel="noopener">Royal Road</a></div>
+      <div class="about-limited">Limited spots while I&#8217;m starting out.</div>
+    </div>
+  </div>
+
+  <div class="demo-footer">
+    <a href="https://www.royalroad.com/fiction/110138/bone-wolf-river" target="_blank" rel="noopener">Read The Bone Wolf River</a>
+    <a href="mailto:chasesingleton2k22@gmail.com">Get your own writing system</a>
+  </div>
 </div>
 
 
@@ -1276,7 +1691,7 @@ table.tbl tr:hover td{background:rgba(201,168,76,.035)}
 
   <div class="demo-footer">
     <a href="https://www.royalroad.com/fiction/110138/bone-wolf-river" target="_blank" rel="noopener">Read The Bone Wolf River free &mdash; Royal Road</a>
-    <a href="mailto:chasesingleton2k22@gmail.com">Commission your own author app</a>
+    <a href="mailto:chasesingleton2k22@gmail.com">Get your own writing system</a>
   </div>
 </div><!-- /app -->
 <script>
@@ -3255,10 +3670,21 @@ function initDemoCh1Cutoff() {
   }
   // Add Royal Road CTA after last visible paragraph
   var cta = document.createElement('div');
-  cta.className = 'ch1-cta';
-  cta.innerHTML = '<div class="ch1-cta-rule"></div>'
-    + '<div class="ch1-cta-text">Continue reading on <a href="https://www.royalroad.com/fiction/110138/bone-wolf-river" target="_blank" rel="noopener">Royal Road &rarr;</a></div>'
-    + '<div class="ch1-cta-sub">What happens next changes everything.</div>';
+  cta.className = 'ch1-cta-system';
+  cta.innerHTML = '<div class="ch1-cta-eyebrow">You&#8217;re not just reading a story</div>'
+    + '<div class="ch1-cta-headline">You&#8217;re inside a <em>custom-built writing system</em>.<br>This one was built for a dark mythological novel.</div>'
+    + '<div class="ch1-cta-divider"></div>'
+    + '<div style="text-align:left;display:inline-block"><div class="ch1-cta-bl-h">Yours could be built around:</div>'
+    + '<div class="ch1-cta-bl-item">&mdash;&nbsp; your tone</div>'
+    + '<div class="ch1-cta-bl-item">&mdash;&nbsp; your workflow</div>'
+    + '<div class="ch1-cta-bl-item">&mdash;&nbsp; your world</div></div>'
+    + '<div class="ch1-cta-divider"></div>'
+    + '<div class="ch1-cta-rr">Continue reading on <a href="https://www.royalroad.com/fiction/110138/bone-wolf-river" target="_blank" rel="noopener">Royal Road &rarr;</a></div>'
+    + '<div class="ch1-cta-rr-sub">What happens next changes everything.</div>'
+    + '<div class="ch1-cta-commission"><div class="ch1-cta-comm-q">Want one? I build these for serious writers.</div>'
+    + '<a class="ch1-cta-comm-link" href="mailto:chasesingleton2k22@gmail.com">Get Your Own Writing System &rarr;</a>'
+    + '<a class="ch1-cta-comm-email" href="mailto:chasesingleton2k22@gmail.com">chasesingleton2k22@gmail.com</a>'
+    + '</div>';
   paras[cutIdx].parentNode.insertBefore(cta, paras[cutIdx].nextSibling);
 }
 
@@ -3280,9 +3706,112 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="locked-modal-body">New chapters release on Royal Road as they are written.<br><br>
       <a href="https://www.royalroad.com/fiction/110138/bone-wolf-river" target="_blank" rel="noopener">Follow on Royal Road &#8594;</a>
     </div>
-    <button class="locked-modal-close" onclick="closeLocked()">Close</button>
+    <div class="locked-imagine">
+      <div class="locked-imagine-eyebrow">Now imagine this for your book</div>
+      <div class="locked-imagine-body">Every tool in this app was designed<br>for one story &mdash; and one author's vision.<br><br>The signals, the compass, the architecture &mdash;<br>yours could be built the same way.</div>
+      <a class="locked-imagine-link" href="mailto:chasesingleton2k22@gmail.com">Get Your Own Writing System &#8594;</a>
+    </div>
+    <button class="locked-modal-close" onclick="closeLocked()" style="margin-top:22px">Close</button>
   </div>
 </div>
+
+
+
+<!-- ── FLOATING GET YOUR APP BUTTON ─────────────────────────────────── -->
+<button id="fab-get-app" onclick="toggleGetApp()">&#9998;&nbsp; Get Your App</button>
+
+<div id="get-app-panel">
+  <button class="gap-close" onclick="toggleGetApp()">&#10005;</button>
+  <div class="gap-crown">&#9819;</div>
+  <div class="gap-h">Want something like this?</div>
+  <div class="gap-body">
+    Send me your manuscript.<br>
+    We&#8217;ll hop on a quick call.<br>
+    I&#8217;ll build your custom system.
+  </div>
+  <div class="gap-divider"></div>
+  <a class="gap-email" href="mailto:chasesingleton2k22@gmail.com">&#8594;&nbsp; chasesingleton2k22@gmail.com</a>
+  <div class="gap-rr">Or message me on <a href="https://www.royalroad.com/fiction/110138/bone-wolf-river" target="_blank" rel="noopener">Royal Road</a></div>
+  <div class="gap-about-block">
+    <div class="gap-about-h">What You&#8217;re Getting</div>
+    <div class="gap-about-body">Not a template. A fully custom system built around your specific book &mdash; your signals, your characters, your threads, your voice. One book. One author. Built to match.</div>
+    <button class="gap-about-tab" onclick="toggleGetApp();showPanel('p-about')">Read More About This System &#8594;</button>
+  </div>
+</div>
+
+<script>
+
+function dismissGuide() {
+  var g = document.getElementById('reader-guide');
+  if (g) g.classList.add('hidden');
+  try { localStorage.setItem('bwr-guide-dismissed', '1'); } catch(e) {}
+}
+document.addEventListener('DOMContentLoaded', function() {
+  try {
+    if (localStorage.getItem('bwr-guide-dismissed')) {
+      var g = document.getElementById('reader-guide');
+      if (g) g.classList.add('hidden');
+    }
+  } catch(e) {}
+});
+
+function toggleGetApp() {
+  var p = document.getElementById('get-app-panel');
+  if (p) p.classList.toggle('open');
+}
+document.addEventListener('click', function(e) {
+  var fab = document.getElementById('fab-get-app');
+  var p = document.getElementById('get-app-panel');
+  if (!p || !fab) return;
+  if (p.classList.contains('open') && !p.contains(e.target) && e.target !== fab) {
+    p.classList.remove('open');
+  }
+});
+</script>
+
+<!-- ── BWR INTRO OVERLAY ─────────────────────────────────────────────── -->
+<div id="bwr-intro-overlay">
+  <div class="bwr-intro-inner">
+    <span class="bwr-intro-crown">&#9819;</span>
+    <div class="bwr-intro-eyebrow">Before You Begin</div>
+    <div class="bwr-intro-h">What You&#8217;re Holding</div>
+    <div class="bwr-intro-body">
+      This is not a book website.<br>
+      It&#8217;s a writer&#8217;s companion &mdash; built <em>specifically</em><br>
+      for <em>The Bone Wolf River</em> and no other story.
+    </div>
+    <div class="bwr-intro-rule"></div>
+    <div class="bwr-intro-aside">
+      The signals, the characters, the story threads &mdash;<br>
+      every tool calibrated to this one manuscript.<br><br>
+      What you&#8217;re about to experience was written by one author<br>
+      and wrapped in a system designed around their vision.<br><br>
+      <em>This could exist for your book, too.</em>
+    </div>
+    <button class="bwr-intro-btn" onclick="closeBwrIntro()">Begin Reading</button>
+    <button class="bwr-intro-skip" onclick="closeBwrIntro()">skip intro</button>
+  </div>
+</div>
+
+<script>
+function closeBwrIntro() {
+  var ov = document.getElementById('bwr-intro-overlay');
+  if (!ov) return;
+  ov.style.transition = 'opacity .45s ease';
+  ov.style.opacity = '0';
+  setTimeout(function() { ov.classList.remove('open'); ov.style.opacity = ''; }, 460);
+  try { sessionStorage.setItem('bwr-intro-seen', '1'); } catch(e) {}
+}
+// Show once per browser session
+document.addEventListener('DOMContentLoaded', function() {
+  try {
+    if (!sessionStorage.getItem('bwr-intro-seen')) {
+      var ov = document.getElementById('bwr-intro-overlay');
+      if (ov) ov.classList.add('open');
+    }
+  } catch(e) {}
+});
+</script>
 
 </body>
 </html>
