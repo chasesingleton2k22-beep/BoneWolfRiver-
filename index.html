@@ -64,6 +64,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:1000;
 
 /* Edit mode button — top-right of reading area */
 #btn-edit{position:absolute;top:10px;right:12px;z-index:50;
+  min-width:102px;text-align:center;
   background:rgba(6,14,25,.92);border:1px solid rgba(201,168,76,.22);
   border-radius:3px;color:var(--gold-dim);padding:5px 13px;
   cursor:pointer;font-family:var(--font-h);font-size:8.5px;letter-spacing:.14em;
@@ -643,6 +644,7 @@ table.tbl tr:hover td{background:rgba(201,168,76,.035)}
 
 /* ── v12: CHAPTER EXPORT ──────────────────────────────────────────────────── */
 #btn-export-ch{position:absolute;top:10px;right:130px;z-index:50;
+  min-width:88px;text-align:center;
   background:rgba(6,14,25,.9);border:1px solid rgba(201,168,76,.22);
   border-radius:3px;color:var(--gold-dim);padding:5px 13px;
   cursor:pointer;font-family:var(--font-h);font-size:8.5px;letter-spacing:.14em;
@@ -1252,6 +1254,165 @@ table.tbl tr:hover td{background:rgba(201,168,76,.035)}
   color:rgba(201,168,76,.45);
   border-top:1px solid rgba(201,168,76,.14);
   padding-top:14px;letter-spacing:.04em}
+
+/* ═══ MOBILE TOOLBAR — sidebar auto-hides below 640px ══════════════════════ */
+@media(max-width:640px){
+  #sidebar{display:none!important}
+  #btn-wide{left:0!important}
+}
+
+/* ═══ IDEAS BOARD LAYOUT — grid gets generous space ═════════════════════════════════════════ */
+
+#p-ideas{
+  overflow:hidden!important;
+  display:flex!important;
+  flex-direction:column!important;
+  padding:24px 32px 0!important;
+  gap:0!important}
+
+#p-ideas .idea-compose{flex-shrink:0;margin-bottom:0;padding-bottom:16px}
+#p-ideas > div:first-child{flex-shrink:0;margin-bottom:14px}
+#p-ideas .ideas-filter-bar{flex-shrink:0;margin-bottom:10px}
+
+#ideas-grid{
+  flex:1!important;
+  min-height:0!important;
+  overflow-y:auto!important;
+  padding-bottom:24px!important;
+  align-content:start}
+
+/* ═══ CROSS-CHAPTER SEARCH ══════════════════════════════════════════════════ */
+
+#arch-search-wrap{
+  display:flex;gap:8px;align-items:center;
+  margin-bottom:20px;max-width:680px;flex-wrap:wrap}
+.arch-search-input{
+  flex:1;min-width:180px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(201,168,76,.22);
+  color:var(--cream);font-family:var(--font-b);font-size:13px;
+  padding:7px 12px;outline:none;transition:border-color .15s}
+.arch-search-input:focus{border-color:rgba(201,168,76,.5)}
+.arch-search-input::placeholder{color:rgba(201,168,76,.3)}
+
+#arch-search-results{margin-bottom:28px;max-width:680px}
+.arch-sr-summary{
+  font-family:var(--font-h);font-size:8px;letter-spacing:.18em;
+  text-transform:uppercase;color:rgba(201,168,76,.45);margin-bottom:16px}
+.arch-sr-ch{margin-bottom:22px}
+.arch-sr-ch-title{
+  font-family:var(--font-h);font-size:9px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--gold);margin-bottom:8px;
+  display:flex;align-items:baseline;gap:10px}
+.arch-sr-count{
+  font-family:var(--font-b);font-size:10px;letter-spacing:0;
+  text-transform:none;color:rgba(201,168,76,.38)}
+.arch-sr-item{
+  font-family:var(--font-b);font-size:12.5px;line-height:1.7;
+  color:var(--cream-dim);padding:7px 0;
+  border-top:1px solid rgba(201,168,76,.07)}
+.arch-search-mark{
+  background:rgba(201,168,76,.22);color:var(--gold);
+  border-radius:2px;padding:0 2px;font-style:normal}
+.arch-sr-none{
+  font-family:var(--font-b);font-size:12px;font-style:italic;
+  color:rgba(201,168,76,.3);padding:16px 0}
+
+/* ═══ MISTAKE HIGHLIGHTS IN READER ════════════════════════════════════════ */
+
+/* Overused signature phrases — warm amber */
+.mis-hl-over{
+  background:rgba(201,168,76,.18);color:#d4a843;
+  border-radius:2px;padding:0 1px;
+  box-shadow:0 0 6px rgba(201,168,76,.25);transition:background .2s}
+.mis-hl-over:hover{background:rgba(201,168,76,.32)}
+
+/* Hedge words — orange */
+.mis-hl-hedge{
+  background:rgba(210,120,40,.18);color:#d47a2a;
+  border-radius:2px;padding:0 1px;
+  box-shadow:0 0 6px rgba(210,120,40,.22);transition:background .2s}
+.mis-hl-hedge:hover{background:rgba(210,120,40,.32)}
+
+/* AI-tell phrases — rose */
+.mis-hl-ai{
+  background:rgba(200,80,90,.18);color:#c85060;
+  border-radius:2px;padding:0 1px;
+  box-shadow:0 0 6px rgba(200,80,90,.22);transition:background .2s}
+.mis-hl-ai:hover{background:rgba(200,80,90,.32)}
+
+/* Mistakes toggle button — matches btn-edit family */
+#btn-mis-hl{position:absolute;top:10px;right:226px;z-index:50;
+  min-width:115px;text-align:center;
+  background:rgba(6,14,25,.92);border:1px solid rgba(201,168,76,.22);
+  border-radius:3px;color:var(--gold-dim);padding:5px 13px;
+  cursor:pointer;font-family:var(--font-h);font-size:8.5px;letter-spacing:.14em;
+  text-transform:uppercase;transition:all .15s;white-space:nowrap}
+#btn-mis-hl:hover{color:var(--gold);border-color:var(--gold-dim)}
+#btn-mis-hl.on{color:var(--gold);border-color:var(--gold);
+  background:rgba(201,168,76,.07)}
+
+/* ═══ IDEAS IN READER ═══════════════════════════════════════════════════════ */
+
+#btn-ideas-hl{position:absolute;top:10px;right:349px;z-index:50;
+  min-width:95px;text-align:center;
+  background:rgba(6,14,25,.92);border:1px solid rgba(201,168,76,.22);
+  border-radius:3px;color:var(--gold-dim);padding:5px 13px;
+  cursor:pointer;font-family:var(--font-h);font-size:8.5px;letter-spacing:.14em;
+  text-transform:uppercase;transition:all .15s;white-space:nowrap}
+#btn-ideas-hl:hover{color:var(--gold);border-color:var(--gold-dim)}
+#btn-ideas-hl.has-ideas{color:var(--gold);border-color:rgba(201,168,76,.45)}
+#btn-ideas-hl.open{color:var(--gold);border-color:var(--gold);
+  background:rgba(201,168,76,.07)}
+
+#ch-ideas-panel{
+  display:none;position:absolute;
+  top:44px;right:349px;z-index:400;
+  width:300px;max-height:340px;
+  background:var(--navy-dark);
+  border:1px solid rgba(201,168,76,.25);
+  box-shadow:0 8px 32px rgba(0,0,0,.55);
+  overflow:hidden;flex-direction:column}
+#ch-ideas-panel.open{display:flex}
+
+#ch-ideas-panel-hd{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px 14px 8px;
+  border-bottom:1px solid rgba(201,168,76,.12);flex-shrink:0}
+#ch-ideas-panel-title{
+  font-family:var(--font-h);font-size:8px;letter-spacing:.18em;
+  text-transform:uppercase;color:rgba(201,168,76,.55)}
+#ch-ideas-close{
+  background:transparent;border:none;color:rgba(201,168,76,.35);
+  font-size:14px;cursor:pointer;padding:0 2px;line-height:1;transition:color .13s}
+#ch-ideas-close:hover{color:var(--gold)}
+
+#ch-ideas-list{overflow-y:auto;flex:1;padding:8px 0}
+
+.ch-idea-item{padding:9px 14px;border-bottom:1px solid rgba(201,168,76,.07);cursor:default}
+.ch-idea-item:last-child{border-bottom:none}
+.ch-idea-item-title{
+  font-family:var(--font-h);font-size:8.5px;letter-spacing:.1em;
+  color:var(--gold);margin-bottom:4px;text-transform:uppercase}
+.ch-idea-item-body{
+  font-family:var(--font-b);font-size:12px;color:var(--cream-dim);line-height:1.5}
+.ch-idea-item-tag{
+  display:inline-block;margin-top:5px;
+  font-family:var(--font-h);font-size:7px;letter-spacing:.12em;
+  text-transform:uppercase;color:rgba(201,168,76,.38);
+  border:1px solid rgba(201,168,76,.18);border-radius:2px;padding:1px 5px}
+
+#ch-ideas-footer{flex-shrink:0;padding:9px 14px;border-top:1px solid rgba(201,168,76,.12)}
+#ch-ideas-goto{
+  background:transparent;border:none;padding:0;
+  font-family:var(--font-h);font-size:8px;letter-spacing:.14em;
+  text-transform:uppercase;color:rgba(201,168,76,.45);
+  cursor:pointer;transition:color .13s}
+#ch-ideas-goto:hover{color:var(--gold)}
+
+.ch-ideas-empty{
+  padding:18px 14px;font-family:var(--font-b);
+  font-size:12px;font-style:italic;color:rgba(201,168,76,.3);text-align:center}
 </style>
 </head>
 <body>
@@ -1305,6 +1466,18 @@ table.tbl tr:hover td{background:rgba(201,168,76,.035)}
   <button id="btn-wide" title="Hide sidebar">&#9664;</button>
   <button id="btn-edit" title="Author Mode: Click any paragraph to edit it directly. Changes save in your browser.">&#9998; Author Mode</button>
   <button id="btn-export-ch" title="Copy current chapter for Royal Road">&#8595; Export</button>
+  <button id="btn-ideas-hl" title="Ideas pinned to this chapter">&#128161; Ideas</button>
+  <div id="ch-ideas-panel">
+    <div id="ch-ideas-panel-hd">
+      <span id="ch-ideas-panel-title">Chapter Ideas</span>
+      <button id="ch-ideas-close" onclick="closeChapterIdeas()">&#10005;</button>
+    </div>
+    <div id="ch-ideas-list"></div>
+    <div id="ch-ideas-footer">
+      <button id="ch-ideas-goto" onclick="goToIdeasBoard()">Open Ideas Board &#8594;</button>
+    </div>
+  </div>
+  <button id="btn-mis-hl" title="Highlight overused phrases, hedge words, and AI tells in this chapter">&#9679; Mistakes</button>
   <div id="reader">
     <div id="read-progress"></div>
     <div id="reader-guide">
@@ -1471,6 +1644,7 @@ table.tbl tr:hover td{background:rgba(201,168,76,.035)}
   <div class="row">
     <button class="btn" id="btn-sig">Check Signals</button>
     <button class="btn btn-dim" id="btn-sig-clr">Clear</button>
+    <button class="btn btn-dim" id="btn-sig-scan" title="Load the current chapter from the reader">&#9654; Scan Current Chapter</button>
     <span class="score-lbl" id="sig-score"></span>
   </div>
   <div id="sig-results"><div class="empty">Paste a passage and click Check Signals.</div></div>
@@ -1587,6 +1761,8 @@ table.tbl tr:hover td{background:rgba(201,168,76,.035)}
         <option value="chapter1">Chapter One</option>
         <option value="chapter2">Chapter Two</option>
         <option value="chapter3">Chapter Three</option>
+        <option value="watching2">The Watching II</option>
+        <option value="brazos">The Brazos River</option>
         <option value="chapter4">Chapter Four</option>
         <option value="chapter5">Chapter Five</option>
         <option value="scary">Scary Chapter</option>
@@ -1650,6 +1826,13 @@ table.tbl tr:hover td{background:rgba(201,168,76,.035)}
     <div class="tool-d">The full shape of the novel &mdash; what&#8217;s written, what&#8217;s open air, what&#8217;s still being built.</div>
   </div>
   <div class="demo-arch-note">44% complete &nbsp;&middot;&nbsp; 16,911 words &nbsp;&middot;&nbsp; 8 of 18 chapters written. The full manuscript is in progress.</div>
+
+  <div id="arch-search-wrap">
+    <input type="text" id="arch-search-in" class="arch-search-input" placeholder="Search all chapters…" autocomplete="off">
+    <button class="btn" id="btn-arch-search">&#9656; Search</button>
+    <button class="btn btn-dim" id="btn-arch-search-clr">Clear</button>
+  </div>
+  <div id="arch-search-results"></div>
 
   <div class="acd-section-h">&#10003; Written &mdash; In the Manuscript</div>
 
@@ -1875,6 +2058,7 @@ function triggerOrbusOverlay() {
 
 // ── AUTHOR MODE STATE ─────────────────────────────────────────────────────
 var authorMode = false;
+var mistakeHlActive = false;
 var EDITS = {};
 function loadEdits() { try { EDITS = JSON.parse(localStorage.getItem('bwr-edits') || '{}'); } catch(e) { EDITS = {}; } }
 function getEdit(key) { return EDITS.hasOwnProperty(key) ? EDITS[key] : null; }
@@ -1921,6 +2105,13 @@ document.addEventListener('DOMContentLoaded', function() {
   if (bWide) bWide.addEventListener('click', toggleWide);
 
   // Author mode
+  var bIdeasHL = document.getElementById('btn-ideas-hl');
+  if (bIdeasHL) bIdeasHL.addEventListener('click', toggleChapterIdeas);
+  setTimeout(updateChapterIdeasBtn, 100);
+
+  var bMisHL = document.getElementById('btn-mis-hl');
+  if (bMisHL) bMisHL.addEventListener('click', toggleMistakeHL);
+
   var bEdit = document.getElementById('btn-edit');
   if (bEdit) bEdit.addEventListener('click', toggleAuthorMode);
 
@@ -2033,6 +2224,19 @@ document.addEventListener('DOMContentLoaded', function() {
   initReaderControls();
   initKeyboardNav();
 
+  // Cross-chapter search
+  var bArchSearch = document.getElementById('btn-arch-search');
+  if (bArchSearch) bArchSearch.addEventListener('click', searchAllChapters);
+  var bArchClr = document.getElementById('btn-arch-search-clr');
+  if (bArchClr) bArchClr.addEventListener('click', clearArchSearch);
+  var archIn = document.getElementById('arch-search-in');
+  if (archIn) archIn.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') searchAllChapters();
+  });
+
+  var bSigScan = document.getElementById('btn-sig-scan');
+  if (bSigScan) bSigScan.addEventListener('click', function() { scanCurrentChapter('sig-in'); });
+
   var bMisScan = document.getElementById('btn-mis-scan');
   if (bMisScan) bMisScan.addEventListener('click', function() { scanCurrentChapter('mis-in'); });
   var bVoiceScan = document.getElementById('btn-voice-scan');
@@ -2072,20 +2276,26 @@ function toggleWide() {
 function toggleAuthorMode() {
   authorMode = !authorMode;
   var reader = document.getElementById('reader');
-  var btn = document.getElementById('btn-edit');
-  var bar = document.getElementById('edit-bar');
+  var btn    = document.getElementById('btn-edit');
+  var bar    = document.getElementById('edit-bar');
+  // Save scroll before edit-bar reflow shifts layout
+  var savedScroll = reader ? reader.scrollTop : 0;
   if (authorMode) {
     reader.classList.add('edit-mode');
-    if (btn) { btn.classList.add('on'); btn.innerHTML = '✔ Reading Mode'; }
+    if (btn) { btn.classList.add('on'); btn.innerHTML = '\u2714 Reading Mode'; }
     if (bar) bar.classList.add('show');
     enableEditingInChapter();
+    if (reader) reader.scrollTop = savedScroll;
+    if (mistakeHlActive) setTimeout(applyMistakeHighlights, 30);
   } else {
     reader.classList.remove('edit-mode');
-    if (btn) { btn.classList.remove('on'); btn.innerHTML = '✎ Author Mode'; }
+    if (btn) { btn.classList.remove('on'); btn.innerHTML = '\u270e Author Mode'; }
     if (bar) bar.classList.remove('show');
     // Remove contenteditable from all
     var ps = document.querySelectorAll('#chapters p[contenteditable="true"]');
     for (var i = 0; i < ps.length; i++) ps[i].contentEditable = 'false';
+    if (reader) reader.scrollTop = savedScroll;
+    if (mistakeHlActive) setTimeout(applyMistakeHighlights, 30);
   }
 }
 
@@ -2435,11 +2645,17 @@ function showChapter(id) {
   if (link) { link.classList.add('on'); link.scrollIntoView({ block: 'nearest' }); }
   try { localStorage.setItem('bwr-chapter', id); } catch(e) {}
   if (authorMode) setTimeout(enableEditingInChapter, 50);
+  if (mistakeHlActive) { clearMistakeHighlights(); setTimeout(applyMistakeHighlights, 80); }
+  closeChapterIdeas();
+  setTimeout(updateChapterIdeasBtn, 20);
 }
 
 function esc(s) {
   if (!s) return '';
   return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+function escRx(s) {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
 // ── SIGNAL CHECKER ────────────────────────────────────────────────────────
@@ -2685,12 +2901,14 @@ function pinIdea() {
   if (titleEl) titleEl.value = '';
   if (textEl)  textEl.value = '';
   renderIdeas();
+  updateChapterIdeasBtn();
 }
 
 function deleteIdea(id) {
   IDEAS = IDEAS.filter(function(x) { return x.id !== id; });
   saveIdeas();
   renderIdeas();
+  updateChapterIdeasBtn();
 }
 
 function updatePendingCount() {
@@ -2778,6 +2996,73 @@ function initResearch() {
       });
     })(cbs[i]);
   }
+}
+
+
+// ── CROSS-CHAPTER SEARCH ──────────────────────────────────────────────────────
+
+function searchAllChapters() {
+  var input   = document.getElementById('arch-search-in');
+  var results = document.getElementById('arch-search-results');
+  if (!input || !results) return;
+  var query = input.value.trim();
+  if (query.length < 2) {
+    results.innerHTML = '<div class="arch-sr-none">Enter at least 2 characters to search.</div>';
+    return;
+  }
+  var lower = query.toLowerCase();
+  var totalFound = 0;
+  var html2 = '';
+
+  for (var c = 0; c < BOOK.length; c++) {
+    var ch = BOOK[c];
+    var matches = [];
+    for (var p = 0; p < ch.paras.length; p++) {
+      var para = ch.paras[p];
+      if (!para.text) continue;
+      var pLower = para.text.toLowerCase();
+      var ix = pLower.indexOf(lower);
+      if (ix < 0) continue;
+      var start   = Math.max(0, ix - 45);
+      var end2    = Math.min(para.text.length, ix + query.length + 90);
+      var snippet = (start > 0 ? '…' : '') +
+                    para.text.slice(start, end2) +
+                    (end2 < para.text.length ? '…' : '');
+      var highlighted = snippet.replace(
+        new RegExp('(' + escRx(query) + ')', 'gi'),
+        '<mark class="arch-search-mark">$1</mark>'
+      );
+      matches.push(highlighted);
+      totalFound++;
+    }
+    if (matches.length > 0) {
+      html2 += '<div class="arch-sr-ch">';
+      html2 += '<div class="arch-sr-ch-title">' +
+               esc(ch.title) +
+               '<span class="arch-sr-count">' + matches.length +
+               ' match' + (matches.length !== 1 ? 'es' : '') + '</span></div>';
+      for (var m = 0; m < matches.length; m++) {
+        html2 += '<div class="arch-sr-item">' + matches[m] + '</div>';
+      }
+      html2 += '</div>';
+    }
+  }
+
+  if (totalFound === 0) {
+    results.innerHTML = '<div class="arch-sr-none">No matches found for “' + esc(query) + '” across any chapter.</div>';
+  } else {
+    results.innerHTML =
+      '<div class="arch-sr-summary">' + totalFound +
+      ' match' + (totalFound !== 1 ? 'es' : '') +
+      ' for “' + esc(query) + '”</div>' + html2;
+  }
+}
+
+function clearArchSearch() {
+  var input   = document.getElementById('arch-search-in');
+  var results = document.getElementById('arch-search-results');
+  if (input)   input.value = '';
+  if (results) results.innerHTML = '';
 }
 
 // ── ARCHITECTURE: PROGRESS + WORD COUNTS ─────────────────────────────────────
@@ -3685,6 +3970,200 @@ function initReaderControls() {
   if (btnStop) btnStop.addEventListener('click', function() {
     if (_recorder && _recorder.state !== 'inactive') _recorder.stop();
   });
+}
+
+
+
+// ── IDEAS IN READER ───────────────────────────────────────────────────────────
+
+function getCurrentChapterId() {
+  var ch = document.querySelector('.chapter.on');
+  return ch ? ch.id.replace('ch-', '') : '';
+}
+
+function updateChapterIdeasBtn() {
+  var btn = document.getElementById('btn-ideas-hl');
+  if (!btn) return;
+  var chId = getCurrentChapterId();
+  var count = 0;
+  for (var i = 0; i < IDEAS.length; i++) {
+    if (IDEAS[i].chapter === chId) count++;
+  }
+  if (count > 0) {
+    btn.innerHTML = '&#128161; ' + count + ' Idea' + (count !== 1 ? 's' : '');
+    btn.classList.add('has-ideas');
+  } else {
+    btn.innerHTML = '&#128161; Ideas';
+    btn.classList.remove('has-ideas');
+  }
+}
+
+function renderChapterIdeasPanel() {
+  var list = document.getElementById('ch-ideas-list');
+  if (!list) return;
+  var chId = getCurrentChapterId();
+  var matching = [];
+  for (var i = 0; i < IDEAS.length; i++) {
+    if (IDEAS[i].chapter === chId) matching.push(IDEAS[i]);
+  }
+  if (matching.length === 0) {
+    list.innerHTML = '<div class="ch-ideas-empty">No ideas pinned to this chapter yet.</div>';
+    return;
+  }
+  var h = '';
+  for (var i = 0; i < matching.length; i++) {
+    var idea = matching[i];
+    var titleHtml = idea.title
+      ? '<div class="ch-idea-item-title">' + esc(idea.title) + '</div>'
+      : '';
+    var bodyTxt = idea.text.length > 140 ? idea.text.slice(0, 137) + '...' : idea.text;
+    h += '<div class="ch-idea-item">';
+    h += titleHtml;
+    h += '<div class="ch-idea-item-body">' + esc(bodyTxt) + '</div>';
+    h += '<span class="ch-idea-item-tag">' + esc(idea.tag) + '</span>';
+    h += '</div>';
+  }
+  list.innerHTML = h;
+}
+
+function toggleChapterIdeas() {
+  var panel = document.getElementById('ch-ideas-panel');
+  var btn   = document.getElementById('btn-ideas-hl');
+  if (!panel) return;
+  if (panel.classList.contains('open')) {
+    panel.classList.remove('open');
+    if (btn) btn.classList.remove('open');
+  } else {
+    renderChapterIdeasPanel();
+    panel.classList.add('open');
+    if (btn) btn.classList.add('open');
+  }
+}
+
+function closeChapterIdeas() {
+  var panel = document.getElementById('ch-ideas-panel');
+  var btn   = document.getElementById('btn-ideas-hl');
+  if (panel) panel.classList.remove('open');
+  if (btn)   btn.classList.remove('open');
+}
+
+function goToIdeasBoard() {
+  closeChapterIdeas();
+  showPanel('p-ideas');
+  var tabs = document.querySelectorAll('.tab');
+  for (var i = 0; i < tabs.length; i++) tabs[i].classList.remove('on');
+  var t = document.querySelector('[data-panel="p-ideas"]');
+  if (t) t.classList.add('on');
+}
+
+document.addEventListener('click', function(e) {
+  var panel = document.getElementById('ch-ideas-panel');
+  var btn   = document.getElementById('btn-ideas-hl');
+  if (!panel || !panel.classList.contains('open')) return;
+  if (!panel.contains(e.target) && e.target !== btn) closeChapterIdeas();
+});
+
+// ── MISTAKE HIGHLIGHTS IN READER ─────────────────────────────────────────────
+
+function getHighlightPhrases(ch) {
+  var paras = ch.querySelectorAll('.pb,.pd,.pp,.pi,.pq');
+  var parts = [];
+  for (var i = 0; i < paras.length; i++) {
+    var t = paras[i].textContent.trim();
+    if (t && t.indexOf('✶') < 0) parts.push(t);
+  }
+  var text = parts.join(' ');
+  var lower = text.toLowerCase();
+  var result = [], seen = {};
+
+  function add(ph, cls) {
+    var key = ph.toLowerCase();
+    if (!seen[key]) { seen[key] = true; result.push({ ph: ph, cls: cls }); }
+  }
+
+  // Overused signature phrases
+  var ops = [
+    { ph:'that specific',thr:2 },{ ph:'had no business',thr:2 },
+    { ph:'something older',thr:2 },{ ph:'something ancient',thr:2 },
+    { ph:'specific quality',thr:2 },{ ph:'no business',thr:2 },
+    { ph:'in a way that',thr:3 },{ ph:'the way',thr:6 },
+    { ph:'ancient',thr:4 },{ ph:'patient',thr:4 },{ ph:'already',thr:6 }
+  ];
+  for (var i = 0; i < ops.length; i++) {
+    var cnt = 0, ix = lower.indexOf(ops[i].ph);
+    while (ix >= 0) { cnt++; ix = lower.indexOf(ops[i].ph, ix + 1); }
+    if (cnt >= ops[i].thr) add(ops[i].ph, 'mis-hl-over');
+  }
+
+  // Hedge words
+  if ((text.match(/\bseemed\b/gi) || []).length > 1) add('seemed', 'mis-hl-hedge');
+  if ((lower.match(/\bsort of\b/g) || []).length > 0) add('sort of', 'mis-hl-hedge');
+  if ((lower.match(/\bkind of\b/g) || []).length > 0) add('kind of', 'mis-hl-hedge');
+
+  // AI-tell phrases
+  var aiTells = [
+    'it is worth noting',"it's worth noting",'notably,','importantly,',
+    'furthermore,','additionally,','in conclusion,','in summary,',
+    'delve into','tapestry of','testament to','game-changer',
+    'paradigm shift','multifaceted','in the realm of',
+    'at the end of the day','wholesome','unpack'
+  ];
+  for (var i = 0; i < aiTells.length; i++) {
+    if (lower.indexOf(aiTells[i]) >= 0) add(aiTells[i], 'mis-hl-ai');
+  }
+
+  result.sort(function(a, b) { return b.ph.length - a.ph.length; });
+  return result;
+}
+
+function applyMistakeHighlights() {
+  var reader = document.getElementById('reader');
+  if (!reader) return;
+  var ch = reader.querySelector('.chapter.on');
+  if (!ch) return;
+  var phrases = getHighlightPhrases(ch);
+  if (phrases.length === 0) return;
+
+  var paras = ch.querySelectorAll('.pb,.pd,.pp,.pi,.pq');
+  for (var i = 0; i < paras.length; i++) {
+    var p = paras[i];
+    var plainText = p.textContent;
+    var hlHtml = plainText;
+    for (var j = 0; j < phrases.length; j++) {
+      var _ph = phrases[j].ph;
+      var _lb = /^\w/.test(_ph) ? '\\b' : '';
+      var _rb = /\w$/.test(_ph) ? '\\b' : '';
+      var rx = new RegExp(_lb + '(' + escRx(_ph) + ')' + _rb, 'gi');
+      var cls = phrases[j].cls;
+      hlHtml = hlHtml.replace(rx, '<span class="' + cls + '">$1</span>');
+    }
+    if (hlHtml !== plainText) p.innerHTML = hlHtml;
+  }
+}
+
+function clearMistakeHighlights() {
+  var hls = document.querySelectorAll('.mis-hl-over, .mis-hl-hedge, .mis-hl-ai');
+  for (var i = 0; i < hls.length; i++) {
+    var parent = hls[i].parentNode;
+    if (parent) {
+      parent.replaceChild(document.createTextNode(hls[i].textContent), hls[i]);
+      parent.normalize();
+    }
+  }
+  var marked = document.querySelectorAll('[data-hl-orig]');
+  for (var i = 0; i < marked.length; i++) marked[i].removeAttribute('data-hl-orig');
+}
+
+function toggleMistakeHL() {
+  mistakeHlActive = !mistakeHlActive;
+  var btn = document.getElementById('btn-mis-hl');
+  if (mistakeHlActive) {
+    applyMistakeHighlights();
+    if (btn) { btn.classList.add('on'); btn.innerHTML = '&#9679; Mistakes On'; }
+  } else {
+    clearMistakeHighlights();
+    if (btn) { btn.classList.remove('on'); btn.innerHTML = '&#9679; Mistakes'; }
+  }
 }
 
 // ── SCAN CURRENT CHAPTER INTO TOOL ───────────────────────────────────────────
